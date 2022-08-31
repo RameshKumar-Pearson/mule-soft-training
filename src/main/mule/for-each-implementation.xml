@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="for-each-implementationFlow" doc:id="f9b51e5a-d388-4c45-a8fe-794aa8f55359" >
+		<scheduler doc:name="Scheduler" doc:id="63741a3a-b030-48ee-91d9-c6d6261f22c4" >
+			<scheduling-strategy >
+				<fixed-frequency frequency="1" timeUnit="MINUTES"/>
+			</scheduling-strategy>
+		</scheduler>
+		<set-variable value="#[5000 as Number]" doc:name="Set Variable" doc:id="1abce89c-5368-44e9-b3dc-fed751e1799e" variableName="rowcount"/>
+		<set-variable value="#[1000 as Number]" doc:name="Set Variable" doc:id="cc176fcb-511c-46d8-9113-1055e847d0fb" variableName="limit"/>
+		<set-variable value="#[0 as Number]" doc:name="Set Variable" doc:id="dce8fae9-412e-435a-8737-73d1a38ac5c4" variableName="offset"/>
+		<logger level="INFO" doc:name="Logger" doc:id="2d0bf021-f431-453d-8e64-70079cfc9e62" message="started"/>
+	</flow>
+</mule>
